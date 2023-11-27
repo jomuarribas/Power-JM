@@ -1,4 +1,4 @@
-import { main, quienSoyGame, userName } from "../../../main";
+import { userName } from "../../../main";
 import { welcomeModal } from "../../welcome-modal/welcome-modal";
 import { puntuacion, quienSoyLaunch } from "../quien-soy-game/quien-soy-game";
 

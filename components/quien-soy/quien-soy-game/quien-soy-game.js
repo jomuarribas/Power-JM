@@ -1,4 +1,4 @@
-import { main, quienSoyGame, userName } from "../../../main";
+import { main, userName } from "../../../main";
 import { clearPrintPeople, people, printPeople } from "../print-people/print-people";
 import { clearPrintQuestions, printQuestions, questions } from "../questions/questions";
 import { youWinModal } from "../you-win-modal/you-win-modal";
