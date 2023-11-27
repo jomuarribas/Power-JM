@@ -23,6 +23,7 @@ let earrings = peopleFilter[peopleFilter.Id = randomId].earrings;
 
 export const quienSoyLaunch = () => {
   main.innerHTML = ''
+  puntuacion = 0;
 
   const quienSoyGame = document.createElement('section')
   quienSoyGame.classList.add('quienSoyGame');
@@ -42,7 +43,7 @@ export const quienSoyLaunch = () => {
   misteryDiv.classList.add('misteryDiv');
   const misteryClose = document.createElement("img");
   misteryClose.classList.add('misteryClose');
-  misteryClose.src = "./public/assets/quien-soy/people/mistery.jpg"
+  misteryClose.src = "/public/assets/quien-soy/people/mistery.jpg"
   quienSoyHead.appendChild(misteryDiv);
   misteryDiv.appendChild(misteryClose);
 
@@ -64,7 +65,6 @@ export const quienSoyLaunch = () => {
   const score = document.createElement("h2");
   score.id = "score"
   score.textContent = 'Puntuación:' + ' ' + puntuacion;
-  score.textContent = 'Puntuación:' + ' ' + 0;
   scoreDiv.appendChild(score);
   quienSoyGame.appendChild(scoreDiv);
 

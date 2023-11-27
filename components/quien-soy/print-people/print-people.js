@@ -12,7 +12,7 @@ export const people = [
     earrings: false,
     moustache: false,
     beard: false,
-    img: './public/assets/quien-soy/people/alba.png'
+    img: '/public/assets/quien-soy/people/alba.png'
   },
   {
     id: 2,
@@ -24,7 +24,7 @@ export const people = [
     earrings: false,
     moustache: true,
     beard: false,
-    img: './public/assets/quien-soy/people/antonio.png'
+    img: '/public/assets/quien-soy/people/antonio.png'
   },
   {
     id: 3,
@@ -36,7 +36,7 @@ export const people = [
     earrings: false,
     moustache: false,
     beard: false,
-    img: './public/assets/quien-soy/people/beatriz.png'
+    img: '/public/assets/quien-soy/people/beatriz.png'
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ export const people = [
     earrings: false,
     moustache: false,
     beard: true,
-    img: './public/assets/quien-soy/people/carlos.png'
+    img: '/public/assets/quien-soy/people/carlos.png'
   },
   {
     id: 5,
@@ -60,7 +60,7 @@ export const people = [
     earrings: false,
     moustache: false,
     beard: false,
-    img: './public/assets/quien-soy/people/carmen.png'
+    img: '/public/assets/quien-soy/people/carmen.png'
   },
   {
     id: 6,
@@ -72,7 +72,7 @@ export const people = [
     earrings: true,
     moustache: false,
     beard: false,
-    img: './public/assets/quien-soy/people/clara.png'
+    img: '/public/assets/quien-soy/people/clara.png'
   },
   {
     id: 7,
@@ -84,7 +84,7 @@ export const people = [
     earrings: true,
     moustache: false,
     beard: false,
-    img: './public/assets/quien-soy/people/cristina.png'
+    img: '/public/assets/quien-soy/people/cristina.png'
   },
   {
     id: 8,
@@ -96,7 +96,7 @@ export const people = [
     earrings: false,
     moustache: true,
     beard: false,
-    img: './public/assets/quien-soy/people/daniel.png'
+    img: '/public/assets/quien-soy/people/daniel.png'
   },
   {
     id: 9,
@@ -108,7 +108,7 @@ export const people = [
     earrings: false,
     moustache: false,
     beard: false,
-    img: './public/assets/quien-soy/people/elena.png'
+    img: '/public/assets/quien-soy/people/elena.png'
   },
   {
     id: 10,
@@ -120,7 +120,7 @@ export const people = [
     earrings: false,
     moustache: false,
     beard: false,
-    img: './public/assets/quien-soy/people/elsa.png'
+    img: '/public/assets/quien-soy/people/elsa.png'
   },
   {
     id: 11,
@@ -132,7 +132,7 @@ export const people = [
     earrings: false,
     moustache: false,
     beard: false,
-    img: './public/assets/quien-soy/people/hector.png'
+    img: '/public/assets/quien-soy/people/hector.png'
   },
   {
     id: 12,
@@ -144,7 +144,7 @@ export const people = [
     earrings: true,
     moustache: false,
     beard: false,
-    img: './public/assets/quien-soy/people/irene.png'
+    img: '/public/assets/quien-soy/people/irene.png'
   },
   {
     id: 13,
@@ -156,7 +156,7 @@ export const people = [
     earrings: false,
     moustache: false,
     beard: false,
-    img: './public/assets/quien-soy/people/ivan.png'
+    img: '/public/assets/quien-soy/people/ivan.png'
   },
   {
     id: 14,
@@ -168,7 +168,7 @@ export const people = [
     earrings: false,
     moustache: false,
     beard: true,
-    img: './public/assets/quien-soy/people/jorge.png'
+    img: '/public/assets/quien-soy/people/jorge.png'
   },
   {
     id: 15,
@@ -180,7 +180,7 @@ export const people = [
     earrings: false,
     moustache: true,
     beard: false,
-    img: './public/assets/quien-soy/people/juan.png'
+    img: '/public/assets/quien-soy/people/juan.png'
   },
   {
     id: 16,
@@ -192,7 +192,7 @@ export const people = [
     earrings: false,
     moustache: false,
     beard: false,
-    img: './public/assets/quien-soy/people/julia.png'
+    img: '/public/assets/quien-soy/people/julia.png'
   },
   {
     id: 17,
@@ -204,7 +204,7 @@ export const people = [
     earrings: false,
     moustache: false,
     beard: false,
-    img: './public/assets/quien-soy/people/lucas.png'
+    img: '/public/assets/quien-soy/people/lucas.png'
   },
   {
     id: 18,
@@ -216,7 +216,7 @@ export const people = [
     earrings: true,
     moustache: false,
     beard: false,
-    img: './public/assets/quien-soy/people/lucia.png'
+    img: '/public/assets/quien-soy/people/lucia.png'
   },
   {
     id: 19,
@@ -228,7 +228,7 @@ export const people = [
     earrings: false,
     moustache: false,
     beard: true,
-    img: './public/assets/quien-soy/people/luis.png'
+    img: '/public/assets/quien-soy/people/luis.png'
   },
   {
     id: 20,
@@ -240,7 +240,7 @@ export const people = [
     earrings: false,
     moustache: false,
     beard: false,
-    img: './public/assets/quien-soy/people/mariano.png'
+    img: '/public/assets/quien-soy/people/mariano.png'
   },
   {
     id: 21,
@@ -252,7 +252,7 @@ export const people = [
     earrings: false,
     moustache: false,
     beard: false,
-    img: './public/assets/quien-soy/people/marina.png'
+    img: '/public/assets/quien-soy/people/marina.png'
   },
   {
     id: 22,
@@ -264,7 +264,7 @@ export const people = [
     earrings: false,
     moustache: false,
     beard: true,
-    img: './public/assets/quien-soy/people/miguel.png'
+    img: '/public/assets/quien-soy/people/miguel.png'
   },
   {
     id: 23,
@@ -276,7 +276,7 @@ export const people = [
     earrings: false,
     moustache: false,
     beard: false,
-    img: './public/assets/quien-soy/people/pablo.png'
+    img: '/public/assets/quien-soy/people/pablo.png'
   },
   {
     id: 24,
@@ -288,7 +288,7 @@ export const people = [
     earrings: false,
     moustache: false,
     beard: false,
-    img: './public/assets/quien-soy/people/rocio.png'
+    img: '/public/assets/quien-soy/people/rocio.png'
   }
 ];
 
