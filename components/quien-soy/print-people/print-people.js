@@ -1,4 +1,3 @@
-import { quienSoyGame } from "../../../main";
 import { gameOver, peopleFilter } from "../quien-soy-game/quien-soy-game";
 import './print-people.css';
 
