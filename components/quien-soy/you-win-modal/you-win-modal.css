@@ -1,0 +1,54 @@
+@import url('/style.css');
+
+#youWinDiv {
+display: flex;
+flex-direction: column;
+position:absolute;
+z-index: 5;
+background-color: beige;
+height: 350px;
+margin: auto;
+margin-top: 5%;
+max-width: 280px;
+padding: 25px;
+border-radius: 40px;
+gap: 15px;
+box-shadow: 5px 5px 20px;
+align-items: center;
+justify-content: center;
+top: 30%;
+left: 17%;
+
+}
+
+#youWinDiv p {
+  color: black;
+  font-family: 'Lobster', sans-serif;
+  font-size: 19px;
+}
+
+#youWinDiv h2 {
+  color: black;
+  font-family: 'Lobster', sans-serif;
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#youWinDiv button {
+  width: 200px;
+  height: 30px;
+background-color: #ee5522;
+color: beige;
+border-radius: 20px;
+border: 0;
+cursor: pointer;
+}
+
+#youWinDiv > button :hover {
+background-color: #ffffff;
+color: beige;
+border-radius: 20px;
+border: 0;
+cursor: pointer;
+}

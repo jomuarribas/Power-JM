@@ -1,0 +1,60 @@
+@import url('/style.css');
+
+#welcome {
+display: flex;
+flex-direction: column;
+background-color: beige;
+height: 500px;
+margin: auto;
+margin-top: 20%;
+max-width: 400px;
+padding: 50px;
+border-radius: 40px;
+gap: 15px;
+box-shadow: 5px 5px 20px;
+align-items: center;
+justify-content: center;
+}
+
+#welcome h1 {
+  color: #ee5522;
+  font-family: 'Lobster', sans-serif;
+  font-size: 40px;
+}
+
+#welcome form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+  font-family: 'Lobster', sans-serif ;
+}
+
+#welcome form input {
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  height: 30px;
+  border-radius: 20px;
+  border: 1px solid #ee5522;
+  text-align: center;
+  font-family: 'Lobster', sans-serif ;
+  font-size: 15px;
+}
+
+#welcome form button {
+  width: 200px;
+  height: 30px;
+background-color: #ee5522;
+color: beige;
+border-radius: 20px;
+border: 0;
+cursor: pointer;
+}
+
+#welcome > form > button :hover {
+background-color: #ffffff;
+color: beige;
+border-radius: 20px;
+border: 0;
+cursor: pointer;
+}
