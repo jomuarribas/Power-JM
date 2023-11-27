@@ -42,7 +42,7 @@ export const quienSoyLaunch = () => {
   misteryDiv.classList.add('misteryDiv');
   const misteryClose = document.createElement("img");
   misteryClose.classList.add('misteryClose');
-  misteryClose.src = "public/assets/quien-soy/people/mistery.jpg"
+  misteryClose.src = "./public/assets/quien-soy/people/mistery.jpg"
   quienSoyHead.appendChild(misteryDiv);
   misteryDiv.appendChild(misteryClose);
 
