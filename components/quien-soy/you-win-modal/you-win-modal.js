@@ -1,5 +1,4 @@
 import { userName } from "../../../main";
-import { welcomeModal } from "../../welcome-modal/welcome-modal";
 import { puntuacion, quienSoyLaunch } from "../quien-soy-game/quien-soy-game";
 
 import './you-win-modal.css'
@@ -13,7 +12,7 @@ export const youWinModal = () => {
   const youWinP = document.createElement('p');
   const youWinButton = document.createElement('button');
 
-  youWinH2.textContent = `¡¡Enhorabuena ${userName} has ganado!!`
+  youWinH2.textContent = `¡¡Enhorabuena ${userName} has acertado!!`
   youWinP.innerHTML = `Tu puntuación ha sido de: ${puntuacion}`
   youWinButton.textContent = "Jugar de nuevo"
 
@@ -29,5 +28,4 @@ export const youWinModal = () => {
 const playNow = (e) => {
   e.preventDefault();
   quienSoyLaunch()
-  // location.reload();
 };

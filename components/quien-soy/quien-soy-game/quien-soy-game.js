@@ -7,7 +7,7 @@ import './quien-soy-game.css'
 export let peopleFilter = people
 let questionsFilter = questions
 
-let infoText = 'Bienvenid@...' + ' ' + '¿Comenzamos?';
+let infoText = '¿Comenzamos?';
 
 export let puntuacion = 0;
 
@@ -43,7 +43,7 @@ export const quienSoyLaunch = () => {
   misteryDiv.classList.add('misteryDiv');
   const misteryClose = document.createElement("img");
   misteryClose.classList.add('misteryClose');
-  misteryClose.src = "/public/assets/quien-soy/people/mistery.jpg"
+  misteryClose.src = "./assets/quien-soy/people/mistery.jpg"
   quienSoyHead.appendChild(misteryDiv);
   misteryDiv.appendChild(misteryClose);
 
@@ -79,7 +79,7 @@ const sumScore = (s) => {
   const score = document.getElementById("score")
   puntuacion += s;
   score.textContent = 'Puntuación:' + ' ' + puntuacion;
-  info.textContent = `🥳 ¡¡Ganamos ${s} puntos!! 🥳`
+  info.textContent = `🥳 ¡¡Ganas ${s} puntos!! 🥳`
 };
 // --- RESTA PUNTOS ---
 const restScore = (r) => {
@@ -87,7 +87,7 @@ const restScore = (r) => {
   const score = document.getElementById("score")
   puntuacion -= r;
   score.textContent = 'Puntuación:' + ' ' + puntuacion;
-  info.textContent = `😞 ¡¡Perdemos ${r} puntos!! 😞`
+  info.textContent = `😞 ¡¡Pierdes ${r} puntos!! 😞`
 };
 
 // --- CUANDO ACIERTAS EL PERSONAJE ---
@@ -109,6 +109,8 @@ const congratulations = () => {
   questionsDiv.style.pointerEvents = 'none';
 
   document.body.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  peopleFilter = people
+  questionsFilter = questions
 }
 
 // --- CUANDO PULSAS UN PERSONAJE ---
@@ -129,10 +131,14 @@ export const gameOver = (e) => {
 // --- LOGICA EN LAS PREGUNTAS ---
 export const quienSoyQuestions = (e) => {
 
-  clearPrintPeople()
-  clearPrintQuestions()
+  const questionDiv = document.querySelector('.questionsDiv');
+  quienSoyHead.removeChild(questionDiv)
+
+  const quienSoyGame = document.querySelector('.quienSoyGame');
+  quienSoyGame.removeChild(quienSoyCards);
 
   if (e.target.textContent.includes(questions[0].question) && randomGender === "male") {
+    console.log(e)
     peopleFilter = peopleFilter.filter(p => p.gender === "male")
     printPeople()
     sumScore(questions[0].success)
