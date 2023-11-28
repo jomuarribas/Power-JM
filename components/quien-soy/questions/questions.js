@@ -3,84 +3,84 @@ import { quienSoyQuestions } from "../quien-soy-game/quien-soy-game";
 export const questions = [
   {
     id: '1',
-    question: '¿Soy un chico?',
+    question: '¿Eres un chico?',
     success: 10,
     failure: 10,
     category: 'Gender'
   },
   {
     id: '2',
-    question: '¿Soy una chica?',
+    question: '¿Eres una chica?',
     success: 10,
     failure: 10,
     category: 'Gender'
   },
   {
     id: '3',
-    question: '¿Tengo el pelo negro?',
+    question: '¿Tienes el pelo negro?',
     success: 10,
     failure: 10,
     category: "HairColor"
   },
   {
     id: '4',
-    question: '¿Tengo el pelo marrón?',
+    question: '¿Tienes el pelo marrón?',
     success: 10,
     failure: 10,
     category: "HairColor"
   },
   {
     id: '5',
-    question: '¿Tengo el pelo rubio?',
+    question: '¿Tienes el pelo rubio?',
     success: 10,
     failure: 10,
     category: "HairColor"
   },
   {
     id: '6',
-    question: '¿Tengo el pelo pelirojo?',
+    question: '¿Tienes el pelo pelirojo?',
     success: 10,
     failure: 10,
     category: "HairColor"
   },
   {
     id: '7',
-    question: '¿Tengo el pelo corto?',
+    question: '¿Tienes el pelo corto?',
     success: 10,
     failure: 10,
     category: 'HairLong'
   },
   {
     id: '8',
-    question: '¿Tengo el pelo largo?',
+    question: '¿Tienes el pelo largo?',
     success: 10,
     failure: 10,
     category: 'HairLong'
   },
   {
     id: '9',
-    question: '¿Tengo gafas?',
+    question: '¿Tienes gafas?',
     success: 15,
     failure: 15,
     category: 'Accesories'
   },
   {
     id: '10',
-    question: '¿Tengo barba?',
+    question: '¿Tienes barba?',
     success: 15,
     failure: 15,
     category: 'Accesories'
   },
   {
     id: '11',
-    question: '¿Tengo bigote?',
+    question: '¿Tienes bigote?',
     success: 15,
     failure: 15,
     category: 'Accesories'
   },
   {
     id: '12',
-    question: '¿Tengo pendientes?',
+    question: '¿Tienes pendientes?',
     success: 15,
     failure: 15,
     category: 'Accesories'

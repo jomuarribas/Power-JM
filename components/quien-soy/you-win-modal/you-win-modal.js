@@ -1,5 +1,5 @@
 import { userName } from "../../../main";
-import { puntuacion, quienSoyLaunch } from "../quien-soy-game/quien-soy-game";
+import { puntuacion, quienSoyLaunch, randomName } from "../quien-soy-game/quien-soy-game";
 
 import './you-win-modal.css'
 
@@ -12,7 +12,7 @@ export const youWinModal = () => {
   const youWinP = document.createElement('p');
   const youWinButton = document.createElement('button');
 
-  youWinH2.textContent = `¡¡Enhorabuena ${userName} has acertado!!`
+  youWinH2.textContent = `¡Soy ${randomName}! ¿Otra partida?`
   youWinP.innerHTML = `Tu puntuación ha sido de: ${puntuacion}`
   youWinButton.textContent = "Jugar de nuevo"
 

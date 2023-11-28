@@ -7,12 +7,10 @@ import './quien-soy-game.css'
 export let peopleFilter = people
 let questionsFilter = questions
 
-let infoText = '¿Comenzamos?';
-
 export let puntuacion = 0;
 
 let randomId = Math.floor(Math.random() * 24) + 1;
-let randomName = people[people.id = randomId].name;
+export let randomName = people[people.id = randomId].name;
 let randomGender = peopleFilter[peopleFilter.Id = randomId].gender;
 let hairColor = peopleFilter[peopleFilter.Id = randomId].hairColor;
 let hairLength = peopleFilter[peopleFilter.Id = randomId].hairLength;
@@ -55,7 +53,7 @@ export const quienSoyLaunch = () => {
   infoDiv.classList.add("infoDiv");
   const info = document.createElement("h2");
   info.id = "info";
-  info.textContent = infoText;
+  info.textContent = `${localStorage.getItem('Nombre')} ¿Comenzamos?`;
   infoDiv.appendChild(info);
   quienSoyGame.appendChild(infoDiv);
 
@@ -130,6 +128,7 @@ export const gameOver = (e) => {
 
 // --- LOGICA EN LAS PREGUNTAS ---
 export const quienSoyQuestions = (e) => {
+  console.log(e)
 
   const questionDiv = document.querySelector('.questionsDiv');
   quienSoyHead.removeChild(questionDiv)
@@ -137,136 +136,104 @@ export const quienSoyQuestions = (e) => {
   const quienSoyGame = document.querySelector('.quienSoyGame');
   quienSoyGame.removeChild(quienSoyCards);
 
-  if (e.target.textContent.includes(questions[0].question) && randomGender === "male") {
-    console.log(e)
-    peopleFilter = peopleFilter.filter(p => p.gender === "male")
+  const accertGender = (item, q) => {
+    peopleFilter = peopleFilter.filter(p => p.gender === item)
     printPeople()
-    sumScore(questions[0].success)
+    sumScore(questions[q].success)
     questionsFilter = questionsFilter.filter(q => q.category !== "Gender")
     printQuestions(questionsFilter)
     return
+  }
+  const failGender = (item, q) => {
+    peopleFilter = peopleFilter.filter(p => p.gender === item)
+    printPeople()
+    restScore(questions[q].failure)
+    questionsFilter = questionsFilter.filter(q => q.category !== "Gender")
+    printQuestions(questionsFilter)
+    return
+  }
+
+  const accertHairColor = (item, q) => {
+    peopleFilter = peopleFilter.filter(p => p.hairColor === item)
+    printPeople()
+    sumScore(questions[q].success)
+    questionsFilter = questionsFilter.filter(q => q.category !== "HairColor")
+    printQuestions(questionsFilter)
+    return
+  }
+  const failHairColor = (item, q, id) => {
+    peopleFilter = peopleFilter.filter(p => p.hairColor !== item)
+    printPeople()
+    restScore(questions[q].failure)
+    questionsFilter = questionsFilter.filter(q => q.id !== id)
+    printQuestions(questionsFilter)
+    return
+  }
+
+  const accertHairLength = (item, q) => {
+    peopleFilter = peopleFilter.filter(p => p.hairLength === item)
+    printPeople()
+    sumScore(questions[q].success)
+    questionsFilter = questionsFilter.filter(q => q.category !== "HairLong")
+    printQuestions(questionsFilter)
+    return
+  }
+  const failHairLength = (item, q) => {
+    peopleFilter = peopleFilter.filter(p => p.hairLength !== item)
+    printPeople()
+    restScore(questions[q].failure)
+    questionsFilter = questionsFilter.filter(q => q.category !== "HairLong")
+    printQuestions(questionsFilter)
+    return
+  }
+
+  if (e.target.textContent.includes(questions[0].question) && randomGender === "male") {
+    accertGender("male", 0)
   }
   else if (e.target.textContent.includes(questions[0].question) && randomGender !== "male") {
-    peopleFilter = peopleFilter.filter(p => p.gender === "female")
-    printPeople()
-    restScore(questions[0].failure)
-    questionsFilter = questionsFilter.filter(q => q.category !== "Gender")
-    printQuestions(questionsFilter)
-    return
+    failGender("female", 0)
   }
-
   if (e.target.textContent.includes(questions[1].question) && randomGender === "female") {
-    peopleFilter = peopleFilter.filter(p => p.gender === "female")
-    printPeople(peopleFilter)
-    sumScore(questions[1].success)
-    questionsFilter = questionsFilter.filter(q => q.category !== "Gender")
-    printQuestions(questionsFilter)
-    return
+    accertGender("female", 1)
   }
   else if (e.target.textContent.includes(questions[1].question) && randomGender !== "female") {
-    peopleFilter = peopleFilter.filter(p => p.gender === "male")
-    printPeople(peopleFilter)
-    restScore(questions[1].failure)
-    questionsFilter = questionsFilter.filter(q => q.category !== "Gender")
-    printQuestions(questionsFilter)
-    return
+    failGender("male", 1)
   }
   else if (e.target.textContent.includes(questions[2].question) && hairColor === "black") {
-    peopleFilter = peopleFilter.filter(p => p.hairColor === "black")
-    printPeople(peopleFilter)
-    sumScore(questions[2].success)
-    questionsFilter = questionsFilter.filter(q => q.category !== "HairColor")
-    printQuestions(questionsFilter)
-    return
+    accertHairColor("black", 2)
   }
   else if (e.target.textContent.includes(questions[2].question) && hairColor !== "black") {
-    peopleFilter = peopleFilter.filter(p => p.hairColor !== "black");
-    printPeople(peopleFilter)
-    restScore(questions[2].failure)
-    questionsFilter = questionsFilter.filter(q => q.id !== "3")
-    printQuestions(questionsFilter)
-    return
+    failHairColor("black", 2, "3")
   }
   else if (e.target.textContent.includes(questions[3].question) && hairColor === "brown") {
-    peopleFilter = peopleFilter.filter(p => p.hairColor === "brown")
-    printPeople(peopleFilter)
-    sumScore(questions[3].success)
-    questionsFilter = questionsFilter.filter(q => q.category !== "HairColor")
-    printQuestions(questionsFilter)
-    return
+    accertHairColor("brown", 3,)
   }
   else if (e.target.textContent.includes(questions[3].question) && hairColor !== "brown") {
-    peopleFilter = peopleFilter.filter(p => p.hairColor !== "brown");
-    printPeople(peopleFilter)
-    restScore(questions[3].failure)
-    questionsFilter = questionsFilter.filter(q => q.id !== "4")
-    printQuestions(questionsFilter)
-    return
+    failHairColor("brown", 3, "4")
   }
-
   else if (e.target.textContent.includes(questions[4].question) && hairColor === "blonde") {
-    peopleFilter = peopleFilter.filter(p => p.hairColor === "blonde")
-    printPeople(peopleFilter)
-    sumScore(questions[4].success)
-    questionsFilter = questionsFilter.filter(q => q.category !== "HairColor")
-    printQuestions(questionsFilter)
-    return
+    accertHairColor("blonde", 4)
   }
   else if (e.target.textContent.includes(questions[4].question) && hairColor !== "blonde") {
-    peopleFilter = peopleFilter.filter(p => p.hairColor !== "blonden");
-    printPeople(peopleFilter)
-    restScore(questions[4].failure)
-    questionsFilter = questionsFilter.filter(q => q.id !== "5")
-    printQuestions(questionsFilter)
-    return
+    failHairColor("blonde", 4, "5")
   }
   else if (e.target.textContent.includes(questions[5].question) && hairColor === "red") {
-    peopleFilter = peopleFilter.filter(p => p.hairColor === "red")
-    printPeople(peopleFilter)
-    sumScore(questions[5].success)
-    questionsFilter = questionsFilter.filter(q => q.category !== "HairColor")
-    printQuestions(questionsFilter)
-    return
+    accertHairColor("red", 5)
   }
   else if (e.target.textContent.includes(questions[5].question) && hairColor !== "red") {
-    peopleFilter = peopleFilter.filter(p => p.hairColor !== "red");
-    printPeople(peopleFilter)
-    restScore(questions[5].failure)
-    questionsFilter = questionsFilter.filter(q => q.id !== "6")
-    printQuestions(questionsFilter)
-    return
+    failHairColor("red", 5, "6")
   }
   else if (e.target.textContent.includes(questions[6].question) && hairLength === "short") {
-    peopleFilter = peopleFilter.filter(p => p.hairLength === "short")
-    printPeople(peopleFilter)
-    sumScore(questions[6].success)
-    questionsFilter = questionsFilter.filter(q => q.category !== "HairLong")
-    printQuestions(questionsFilter)
-    return
+    accertHairLength("short", 6)
   }
   else if (e.target.textContent.includes(questions[6].question) && hairLength !== "short") {
-    peopleFilter = peopleFilter.filter(p => p.hairLength !== "short");
-    printPeople(peopleFilter)
-    restScore(questions[6].failure)
-    questionsFilter = questionsFilter.filter(q => q.category !== "HairLong")
-    printQuestions(questionsFilter)
-    return
+    failHairLength("short", 6)
   }
   else if (e.target.textContent.includes(questions[7].question) && hairLength === "long") {
-    peopleFilter = peopleFilter.filter(p => p.hairLength === "long")
-    printPeople(peopleFilter)
-    sumScore(questions[7].success)
-    questionsFilter = questionsFilter.filter(q => q.category !== "HairLong")
-    printQuestions(questionsFilter)
-    return
+    accertHairLength("long", 7)
   }
   else if (e.target.textContent.includes(questions[7].question) && hairLength !== "long") {
-    peopleFilter = peopleFilter.filter(p => p.hairLength !== "long");
-    printPeople(peopleFilter)
-    restScore(questions[7].failure)
-    questionsFilter = questionsFilter.filter(q => q.category !== "HairLong")
-    printQuestions(questionsFilter)
-    return
+    failHairLength("long", 7)
   }
   else if (e.target.textContent.includes(questions[8].question) && glasses) {
     peopleFilter = peopleFilter.filter(p => p.glasses)

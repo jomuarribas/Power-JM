@@ -51,10 +51,6 @@ border: 0;
 cursor: pointer;
 }
 
-#welcome > form > button :hover {
-background-color: #ffffff;
-color: beige;
-border-radius: 20px;
-border: 0;
-cursor: pointer;
+#welcome > form > button:hover {
+  background-color: #0b7d35;
 }
