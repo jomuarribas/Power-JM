@@ -1,0 +1,17 @@
+#footer {
+  margin-top: 15px;
+}
+
+#footer > div {
+  display: flex;
+  position: fixed;
+  bottom: 0;
+  background-color: var(--pjm-secundary-button-color);
+  height: 30px;
+  color: black;
+  width: 100%;
+  margin: auto;
+  font-size: 15px;
+  align-items: center;
+  justify-content: center;
+}

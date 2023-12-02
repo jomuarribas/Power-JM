@@ -1,0 +1,31 @@
+#welcomePage {
+  max-width: 1000px;
+  background-color: var(--pjm-secundary-color);
+  margin: auto;
+  margin-top: 15px;
+  font-family: 'Roboto', sans-serif;
+  font-size: 17px;
+  padding: 50px 5%;
+  text-align: justify;
+  border-radius: 20px;
+}
+
+.quienSoyArt, .memoryDevArt, .piedraPapelTijeraArt {
+margin-top: 40px;
+}
+
+#welcomePage button {
+  margin-top: 10px;
+  width: 100px;
+  height: 30px;
+  background-color: var(--pjm-primary-button-color);
+  color: var(--pjm-secundary-color);
+  border-radius: 20px;
+  border: 0;
+  cursor: pointer;
+}
+
+#welcomePage button:hover {
+  background-color: var(--pjm-secundary-color);
+  transition: 400ms;
+}

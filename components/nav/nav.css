@@ -1,0 +1,27 @@
+#nav {
+  width: 100%;
+  display: flex;
+  justify-content:space-around;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+#nav > button {
+  padding: 0 15px;
+  width: 130px;
+  background-color: var(--pjm-secundary-color);
+  height: 30px;
+  border-radius: var(--pjm-border-radius-small);
+  border: none;
+  font-family: 'Lobster', sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+#nav > button:hover {
+  color: var(--pjm-secundary-color);
+  background-color: var(--pjm-primary-color);
+  transition: 400ms;
+
+}
+

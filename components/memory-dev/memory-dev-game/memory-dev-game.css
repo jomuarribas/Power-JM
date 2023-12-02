@@ -1,0 +1,55 @@
+#memoryDevGame {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  gap: 10px;
+  background-color: var(--pjm-primary-color-memoryDev);
+  justify-content: center;
+  border-radius: var(--pjm-border-radius-big);
+  margin: auto;
+  margin-top: 20px;
+  padding: 20px;
+}
+
+#memoryDevGame > h2{
+  font-family: 'Lobster', sans-serif;
+  color: var(--pjm-primary-color);
+  font-size: 40px;
+}
+
+.scoreMemoryDiv {
+  font-family: 'Lobster', sans-serif;
+  color: var(--pjm-primary-color);
+  background-color: var(--pjm-secundary-color-memoryDev);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+  border-radius: var(--pjm-border-radius-big);
+  text-align: center;
+  justify-content: center;
+}
+
+.buttonMemoryDiv {
+  width: 100%;
+  text-align: center;
+}
+
+.buttonMemoryDiv > button {
+  width: 150px;
+  height: 30px;
+  background-color: var(--pjm-primary-color);
+  color: var(--pjm-secundary-color);
+  border-radius: var(--pjm-border-radius-big);
+  border: 0;
+  cursor: pointer;
+}
+
+.buttonMemoryDiv > button:hover {
+  background-color: var(--pjm-secundary-color-memoryDev);
+  transition: 400ms;
+}
+
+.scoreMemoryH3 {
+  font-size: 25px;
+}

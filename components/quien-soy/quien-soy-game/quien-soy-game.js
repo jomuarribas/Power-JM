@@ -1,27 +1,38 @@
 import { main, userName } from "../../../main";
 import { clearPrintPeople, people, printPeople } from "../print-people/print-people";
-import { clearPrintQuestions, printQuestions, questions } from "../questions/questions";
+import { printQuestions, questions } from "../questions/questions";
 import { youWinModal } from "../you-win-modal/you-win-modal";
 import './quien-soy-game.css'
 
 export let peopleFilter = people
-let questionsFilter = questions
+export let questionsFilter = questions
 
 export let puntuacion = 0;
 
-let randomId = Math.floor(Math.random() * 24) + 1;
-export let randomName = people[people.id = randomId].name;
-let randomGender = peopleFilter[peopleFilter.Id = randomId].gender;
-let hairColor = peopleFilter[peopleFilter.Id = randomId].hairColor;
-let hairLength = peopleFilter[peopleFilter.Id = randomId].hairLength;
-let glasses = peopleFilter[peopleFilter.Id = randomId].glasses;
-let beard = peopleFilter[peopleFilter.Id = randomId].beard;
-let moustache = peopleFilter[peopleFilter.Id = randomId].moustache;
-let earrings = peopleFilter[peopleFilter.Id = randomId].earrings;
+let randomId;
+
+export let randomName = ''
+let randomGender = ''
+let randomHairColor = ''
+let randomHairLength = ''
+let randomAccesories = ''
+
+const random = () => {
+  randomId = Math.floor(Math.random() * 24)
+
+  randomName = people[randomId].name;
+  randomGender = people[randomId].gender;
+  randomHairColor = people[randomId].hairColor;
+  randomHairLength = people[randomId].hairLength;
+  randomAccesories = people[randomId].accesories;
+}
+random()
 
 export const quienSoyLaunch = () => {
   main.innerHTML = ''
   puntuacion = 0;
+
+  random();
 
   const quienSoyGame = document.createElement('section')
   quienSoyGame.classList.add('quienSoyGame');
@@ -46,7 +57,7 @@ export const quienSoyLaunch = () => {
   misteryDiv.appendChild(misteryClose);
 
   // --- PREGUNTAS ---
-  printQuestions(questionsFilter);
+  printQuestions();
 
   // --- INFORMACION ---
   const infoDiv = document.createElement("div");
@@ -67,22 +78,31 @@ export const quienSoyLaunch = () => {
   quienSoyGame.appendChild(scoreDiv);
 
   // --- PERSONAJES ---
-  printPeople(people);
-
+  printPeople();
 }
 
 // --- SUMA PUNTOS ---
 const sumScore = (s) => {
+  const infoDiv = document.querySelector('.infoDiv')
   const info = document.getElementById("info")
   const score = document.getElementById("score")
+  infoDiv.style.backgroundColor = 'green';
+  setTimeout(() => {
+    infoDiv.style.backgroundColor = 'black';
+  }, 1000);
   puntuacion += s;
   score.textContent = 'Puntuación:' + ' ' + puntuacion;
   info.textContent = `🥳 ¡¡Ganas ${s} puntos!! 🥳`
 };
 // --- RESTA PUNTOS ---
 const restScore = (r) => {
+  const infoDiv = document.querySelector('.infoDiv')
   const info = document.getElementById("info")
   const score = document.getElementById("score")
+  infoDiv.style.backgroundColor = 'red';
+  setTimeout(() => {
+    infoDiv.style.backgroundColor = 'black';
+  }, 1000);
   puntuacion -= r;
   score.textContent = 'Puntuación:' + ' ' + puntuacion;
   info.textContent = `😞 ¡¡Pierdes ${r} puntos!! 😞`
@@ -96,7 +116,7 @@ const congratulations = () => {
   misteryImg.classList.add("misteryImg");
   const misteryName = document.createElement("h2");
   misteryName.classList.add("misteryName");
-  misteryImg.src = people[people.id = randomId].img
+  misteryImg.src = people[randomId].img
   misteryName.textContent = randomName
   misteryDiv.appendChild(misteryImg)
   misteryDiv.appendChild(misteryName);
@@ -113,23 +133,25 @@ const congratulations = () => {
 
 // --- CUANDO PULSAS UN PERSONAJE ---
 export const gameOver = (e) => {
-  const info = document.getElementById("info")
-  if (e.target.nextElementSibling.outerText === randomName) {
+  const infoDiv = document.querySelector('.infoDiv')
+  if (e.target.children[1].innerText === randomName) {
+    infoDiv.style.backgroundColor = 'black';
     congratulations();
     sumScore(50);
     info.textContent = `¡¡Genial ${userName} ya sabes quien soy!!`
     youWinModal();
   } else {
-    info.textContent = `Lo siento pero no soy ${e.target.nextElementSibling.outerText}`
     restScore(20)
+    info.textContent = `Lo siento pero no soy ${e.target.children[1].textContent}`
+    peopleFilter = peopleFilter.filter(p => p.name !== e.target.children[1].innerText)
+    clearPrintPeople()
+    printPeople()
   }
 
 };
 
 // --- LOGICA EN LAS PREGUNTAS ---
 export const quienSoyQuestions = (e) => {
-  console.log(e)
-
   const questionDiv = document.querySelector('.questionsDiv');
   quienSoyHead.removeChild(questionDiv)
 
@@ -141,15 +163,15 @@ export const quienSoyQuestions = (e) => {
     printPeople()
     sumScore(questions[q].success)
     questionsFilter = questionsFilter.filter(q => q.category !== "Gender")
-    printQuestions(questionsFilter)
+    printQuestions()
     return
   }
   const failGender = (item, q) => {
-    peopleFilter = peopleFilter.filter(p => p.gender === item)
+    peopleFilter = peopleFilter.filter(p => p.gender !== item)
     printPeople()
     restScore(questions[q].failure)
     questionsFilter = questionsFilter.filter(q => q.category !== "Gender")
-    printQuestions(questionsFilter)
+    printQuestions()
     return
   }
 
@@ -187,118 +209,57 @@ export const quienSoyQuestions = (e) => {
     return
   }
 
-  if (e.target.textContent.includes(questions[0].question) && randomGender === "male") {
-    accertGender("male", 0)
-  }
-  else if (e.target.textContent.includes(questions[0].question) && randomGender !== "male") {
-    failGender("female", 0)
-  }
-  if (e.target.textContent.includes(questions[1].question) && randomGender === "female") {
-    accertGender("female", 1)
-  }
-  else if (e.target.textContent.includes(questions[1].question) && randomGender !== "female") {
-    failGender("male", 1)
-  }
-  else if (e.target.textContent.includes(questions[2].question) && hairColor === "black") {
-    accertHairColor("black", 2)
-  }
-  else if (e.target.textContent.includes(questions[2].question) && hairColor !== "black") {
-    failHairColor("black", 2, "3")
-  }
-  else if (e.target.textContent.includes(questions[3].question) && hairColor === "brown") {
-    accertHairColor("brown", 3,)
-  }
-  else if (e.target.textContent.includes(questions[3].question) && hairColor !== "brown") {
-    failHairColor("brown", 3, "4")
-  }
-  else if (e.target.textContent.includes(questions[4].question) && hairColor === "blonde") {
-    accertHairColor("blonde", 4)
-  }
-  else if (e.target.textContent.includes(questions[4].question) && hairColor !== "blonde") {
-    failHairColor("blonde", 4, "5")
-  }
-  else if (e.target.textContent.includes(questions[5].question) && hairColor === "red") {
-    accertHairColor("red", 5)
-  }
-  else if (e.target.textContent.includes(questions[5].question) && hairColor !== "red") {
-    failHairColor("red", 5, "6")
-  }
-  else if (e.target.textContent.includes(questions[6].question) && hairLength === "short") {
-    accertHairLength("short", 6)
-  }
-  else if (e.target.textContent.includes(questions[6].question) && hairLength !== "short") {
-    failHairLength("short", 6)
-  }
-  else if (e.target.textContent.includes(questions[7].question) && hairLength === "long") {
-    accertHairLength("long", 7)
-  }
-  else if (e.target.textContent.includes(questions[7].question) && hairLength !== "long") {
-    failHairLength("long", 7)
-  }
-  else if (e.target.textContent.includes(questions[8].question) && glasses) {
-    peopleFilter = peopleFilter.filter(p => p.glasses)
-    printPeople(peopleFilter)
-    sumScore(questions[8].success)
-    questionsFilter = questionsFilter.filter(q => q.id !== "9")
+  const accertAccesories = (item, q) => {
+    peopleFilter = peopleFilter.filter(p => p.accesories === item)
+    printPeople()
+    sumScore(questions[q].success)
+    questionsFilter = questionsFilter.filter(q => q.category !== "Accesories")
     printQuestions(questionsFilter)
     return
   }
-  else if (e.target.textContent.includes(questions[8].question) && glasses === false) {
-    peopleFilter = peopleFilter.filter(p => p.glasses === false);
-    printPeople(peopleFilter)
-    restScore(questions[8].failure)
-    questionsFilter = questionsFilter.filter(q => q.id !== "9")
-    printQuestions(questionsFilter)
-    return
-  }
-  else if (e.target.textContent.includes(questions[9].question) && beard) {
-    peopleFilter = peopleFilter.filter(p => p.beard)
-    printPeople(peopleFilter)
-    sumScore(questions[9].success)
-    questionsFilter = questionsFilter.filter(q => q.id !== "10")
-    printQuestions(questionsFilter)
-    return
-  }
-  else if (e.target.textContent.includes(questions[9].question) && beard === false) {
-    peopleFilter = peopleFilter.filter(p => p.beard === false);
-    printPeople(peopleFilter)
-    restScore(questions[9].failure)
-    questionsFilter = questionsFilter.filter(q => q.id !== "10")
-    printQuestions(questionsFilter)
-    return
-  }
-  else if (e.target.textContent.includes(questions[10].question) && moustache) {
-    peopleFilter = peopleFilter.filter(p => p.moustache)
-    printPeople(peopleFilter)
-    sumScore(questions[10].success)
-    questionsFilter = questionsFilter.filter(q => q.id !== "11")
-    printQuestions(questionsFilter)
-    return
-  }
-  else if (e.target.textContent.includes(questions[10].question) && moustache === false) {
-    peopleFilter = peopleFilter.filter(p => p.moustache === false);
-    printPeople(peopleFilter)
-    restScore(questions[10].failure)
-    questionsFilter = questionsFilter.filter(q => q.id !== "11")
-    printQuestions(questionsFilter)
-    return
-  }
-  else if (e.target.textContent.includes(questions[11].question) && earrings) {
-    peopleFilter = peopleFilter.filter(p => p.earrings)
-    printPeople(peopleFilter)
-    sumScore(questions[11].success)
-    questionsFilter = questionsFilter.filter(q => q.id !== "12")
-    printQuestions(questionsFilter)
-    return
-  }
-  else if (e.target.textContent.includes(questions[11].question) && earrings === false) {
-    peopleFilter = peopleFilter.filter(p => p.earrings === false);
-    printPeople(peopleFilter)
-    restScore(questions[11].failure)
-    questionsFilter = questionsFilter.filter(q => q.id !== "12")
+  const failAccesories = (item, q, accesorie) => {
+    peopleFilter = peopleFilter.filter(p => p.accesories !== item)
+    printPeople()
+    restScore(questions[q].failure)
+    questionsFilter = questionsFilter.filter(q => q.id !== accesorie)
     printQuestions(questionsFilter)
     return
   }
 
-
+  if (e.target.textContent === questions[0].question) {
+    if (randomGender === "male") { accertGender("male", 0) } else { failGender("male", 0) }
+  }
+  else if (e.target.textContent === questions[1].question) {
+    if (randomGender === "female") { accertGender("female", 0) } else { failGender("female", 0) }
+  }
+  else if (e.target.textContent === questions[2].question) {
+    if (randomHairColor === "black") { accertHairColor("black", 2) } else { failHairColor("black", 2, "3") }
+  }
+  else if (e.target.textContent === questions[3].question) {
+    if (randomHairColor === "brown") { accertHairColor("brown", 3,) } else { failHairColor("brown", 3, "4") }
+  }
+  else if (e.target.textContent === questions[4].question) {
+    if (randomHairColor === "blonde") { accertHairColor("blonde", 4) } else { failHairColor("blonde", 4, "5") }
+  }
+  else if (e.target.textContent === questions[5].question) {
+    if (randomHairColor === "red") { accertHairColor("red", 5) } else { failHairColor("red", 5, "6") }
+  }
+  else if (e.target.textContent === questions[6].question) {
+    if (randomHairLength === "short") { accertHairLength("short", 6) } else { failHairLength("short", 6) }
+  }
+  else if (e.target.textContent === questions[7].question) {
+    if (randomHairLength === "long") { accertHairLength("long", 7) } else { failHairLength("long", 7) }
+  }
+  else if (e.target.textContent === questions[8].question) {
+    if (randomAccesories === "glasses") { accertAccesories("glasses", 8) } else { failAccesories("glasses", 8, "9") }
+  }
+  else if (e.target.textContent === questions[9].question) {
+    if (randomAccesories === "beard") { accertAccesories("beard", 9) } else { failAccesories("beard", 9, "10") }
+  }
+  else if (e.target.textContent === questions[10].question) {
+    if (randomAccesories === "moustache") { accertAccesories("moustache", 10) } else { failAccesories("moustache", 10, "11") }
+  }
+  else if (e.target.textContent === questions[11].question) {
+    if (randomAccesories === "earrings") { accertAccesories("earrings", 11) } else { failAccesories("earrings", 11, "12") }
+  }
 }

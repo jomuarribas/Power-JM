@@ -1,41 +1,32 @@
-@import url('/style.css');
-
 #youWinDiv {
-display: flex;
-flex-direction: column;
-position:absolute;
-
-
-top: -30vh;
-left: 0;
-right: 0;
-bottom: 0;
-margin: auto;
-
-
-
-z-index: 5;
-background-color: beige;
-height: 350px;
-
-max-width: 280px;
-padding: 25px;
-border-radius: 40px;
-gap: 15px;
-box-shadow: 5px 5px 20px;
-align-items: center;
-justify-content: center;
-
+  display: flex;
+  flex-direction: column;
+  position:absolute;
+  top: -30vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 5;
+  background-color: var(--pjm-secundary-color);
+  height: 350px;
+  max-width: 280px;
+  padding: 25px;
+  border-radius: var(--pjm-border-radius-big);
+  gap: 15px;
+  box-shadow: 5px 5px 20px;
+  align-items: center;
+  justify-content: center;
 }
 
 #youWinDiv p {
-  color: black;
+  color: var(--pjm-primary-color);
   font-family: 'Lobster', sans-serif;
   font-size: 19px;
 }
 
 #youWinDiv h2 {
-  color: black;
+  color: var(--pjm-primary-color);
   font-family: 'Lobster', sans-serif;
   font-size: 35px;
   text-align: center;
@@ -45,23 +36,24 @@ justify-content: center;
 #youWinDiv button {
   width: 200px;
   height: 30px;
-background-color: #ee5522;
-color: beige;
-border-radius: 20px;
-border: 0;
-cursor: pointer;
+  background-color: var(--pjm-primary-button-color);
+  color: var(--pjm-primary-color);
+  border-radius: var(--pjm-border-radius-big);
+  border: 0;
+  cursor: pointer;
 }
 
 #youWinDiv > button:hover {
-background-color: #0b7d35;
+  background-color: var(--pjm-secundary-button-color);
+  color: var(--pjm-primary-color)
 }
 
 #youWinDiv button {
   width: 200px;
   height: 30px;
-background-color: #ee5522;
-color: beige;
-border-radius: 20px;
-border: 0;
-cursor: pointer;
+  background-color: var(--pjm-primary-button-color);
+  color: var(--pjm-secundary-color);
+  border-radius: var(--pjm-border-radius-big);
+  border: 0;
+  cursor: pointer;
 }

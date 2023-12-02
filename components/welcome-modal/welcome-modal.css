@@ -3,10 +3,10 @@
 #welcome {
 display: flex;
 flex-direction: column;
-background-color: beige;
+background-color: var(--pjm-secundary-color);
 height: 500px;
 margin: auto;
-margin-top: 20%;
+margin-top: 10%;
 max-width: 400px;
 padding: 50px;
 border-radius: 40px;
@@ -17,7 +17,7 @@ justify-content: center;
 }
 
 #welcome h1 {
-  color: #ee5522;
+  color: var(--pjm-primary-button-color);
   font-family: 'Lobster', sans-serif;
   font-size: 40px;
 }
@@ -35,7 +35,7 @@ justify-content: center;
   margin-bottom: 10px;
   height: 30px;
   border-radius: 20px;
-  border: 1px solid #ee5522;
+  border: 1px solid var(--pjm-primary-button-color);
   text-align: center;
   font-family: 'Lobster', sans-serif ;
   font-size: 15px;
@@ -44,13 +44,15 @@ justify-content: center;
 #welcome form button {
   width: 200px;
   height: 30px;
-background-color: #ee5522;
-color: beige;
-border-radius: 20px;
-border: 0;
-cursor: pointer;
+  background-color: var(--pjm-primary-button-color);
+  color: var(--pjm-secundary-color);
+  border-radius: 20px;
+  border: 0;
+  cursor: pointer;
 }
 
 #welcome > form > button:hover {
-  background-color: #0b7d35;
+  background-color: var(--pjm-secundary-button-color);
+  color: var(--pjm-primary-color);
+  transition: 400ms;
 }

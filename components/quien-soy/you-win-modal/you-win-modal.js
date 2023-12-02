@@ -12,7 +12,7 @@ export const youWinModal = () => {
   const youWinP = document.createElement('p');
   const youWinButton = document.createElement('button');
 
-  youWinH2.textContent = `¡Soy ${randomName}! ¿Otra partida?`
+  youWinH2.textContent = `¡Enhorabuena soy ${randomName}! ¿Otra partida?`
   youWinP.innerHTML = `Tu puntuación ha sido de: ${puntuacion}`
   youWinButton.textContent = "Jugar de nuevo"
 
@@ -27,5 +27,5 @@ export const youWinModal = () => {
 
 const playNow = (e) => {
   e.preventDefault();
-  quienSoyLaunch()
+  quienSoyLaunch();
 };

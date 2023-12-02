@@ -1,3 +1,3 @@
 # Power JM
- Plataforma de mini-juegos
- - Ejercicio propuesto para bootcamp
+ Plataforma propuesta con tres mini-juegos
+ - Ejercicio realizado para bootcamp

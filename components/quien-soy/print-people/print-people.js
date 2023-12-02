@@ -7,11 +7,8 @@ export const people = [
     name: 'Alba',
     hairColor: 'blonde',
     hairLength: 'long',
-    glasses: false,
     gender: 'female',
-    earrings: false,
-    moustache: false,
-    beard: false,
+    accesories: 'none',
     img: './assets/quien-soy/people/alba.png'
   },
   {
@@ -19,11 +16,8 @@ export const people = [
     name: 'Antonio',
     hairColor: 'black',
     hairLength: 'short',
-    glasses: false,
     gender: 'male',
-    earrings: false,
-    moustache: true,
-    beard: false,
+    accesories: 'moustache',
     img: './assets/quien-soy/people/antonio.png'
   },
   {
@@ -31,11 +25,8 @@ export const people = [
     name: 'Beatriz',
     hairColor: 'red',
     hairLength: 'long',
-    glasses: false,
     gender: 'female',
-    earrings: false,
-    moustache: false,
-    beard: false,
+    accesories: 'none',
     img: './assets/quien-soy/people/beatriz.png'
   },
   {
@@ -43,23 +34,17 @@ export const people = [
     name: 'Carlos',
     hairColor: 'black',
     hairLength: 'long',
-    glasses: false,
     gender: 'male',
-    earrings: false,
-    moustache: false,
-    beard: true,
+    accesories: 'beard',
     img: './assets/quien-soy/people/carlos.png'
   },
   {
     id: 5,
     name: 'Carmen',
     hairColor: 'red',
-    hairLength: 'long',
-    glasses: false,
+    hairLength: 'short',
     gender: 'female',
-    earrings: false,
-    moustache: false,
-    beard: false,
+    accesories: 'none',
     img: './assets/quien-soy/people/carmen.png'
   },
   {
@@ -67,11 +52,8 @@ export const people = [
     name: 'Clara',
     hairColor: 'brown',
     hairLength: 'long',
-    glasses: false,
     gender: 'female',
-    earrings: true,
-    moustache: false,
-    beard: false,
+    accesories: 'earrings',
     img: './assets/quien-soy/people/clara.png'
   },
   {
@@ -79,11 +61,8 @@ export const people = [
     name: 'Cristina',
     hairColor: 'black',
     hairLength: 'long',
-    glasses: false,
     gender: 'female',
-    earrings: true,
-    moustache: false,
-    beard: false,
+    accesories: 'earrings',
     img: './assets/quien-soy/people/cristina.png'
   },
   {
@@ -91,11 +70,8 @@ export const people = [
     name: 'Daniel',
     hairColor: 'black',
     hairLength: 'long',
-    glasses: false,
     gender: 'male',
-    earrings: false,
-    moustache: true,
-    beard: false,
+    accesories: 'moustache',
     img: './assets/quien-soy/people/daniel.png'
   },
   {
@@ -103,11 +79,8 @@ export const people = [
     name: 'Elena',
     hairColor: 'red',
     hairLength: 'long',
-    glasses: true,
     gender: 'female',
-    earrings: false,
-    moustache: false,
-    beard: false,
+    accesories: 'glasses',
     img: './assets/quien-soy/people/elena.png'
   },
   {
@@ -115,11 +88,8 @@ export const people = [
     name: 'Elsa',
     hairColor: 'black',
     hairLength: 'long',
-    glasses: true,
     gender: 'female',
-    earrings: false,
-    moustache: false,
-    beard: false,
+    accesories: 'glasses',
     img: './assets/quien-soy/people/elsa.png'
   },
   {
@@ -127,23 +97,17 @@ export const people = [
     name: 'Hector',
     hairColor: 'black',
     hairLength: 'long',
-    glasses: true,
     gender: 'male',
-    earrings: false,
-    moustache: false,
-    beard: false,
+    accesories: 'glasses',
     img: './assets/quien-soy/people/hector.png'
   },
   {
     id: 12,
     name: 'Irene',
     hairColor: 'black',
-    hairLength: 'long',
-    glasses: false,
+    hairLength: 'short',
     gender: 'female',
-    earrings: true,
-    moustache: false,
-    beard: false,
+    accesories: 'earrings',
     img: './assets/quien-soy/people/irene.png'
   },
   {
@@ -151,11 +115,8 @@ export const people = [
     name: 'Ivan',
     hairColor: 'blonde',
     hairLength: 'short',
-    glasses: true,
     gender: 'male',
-    earrings: false,
-    moustache: false,
-    beard: false,
+    accesories: 'glasses',
     img: './assets/quien-soy/people/ivan.png'
   },
   {
@@ -163,11 +124,8 @@ export const people = [
     name: 'Jorge',
     hairColor: 'brown',
     hairLength: 'short',
-    glasses: false,
     gender: 'male',
-    earrings: false,
-    moustache: false,
-    beard: true,
+    accesories: 'beard',
     img: './assets/quien-soy/people/jorge.png'
   },
   {
@@ -175,23 +133,17 @@ export const people = [
     name: 'Juán',
     hairColor: 'black',
     hairLength: 'short',
-    glasses: false,
     gender: 'male',
-    earrings: false,
-    moustache: true,
-    beard: false,
+    accesories: 'moustache',
     img: './assets/quien-soy/people/juan.png'
   },
   {
     id: 16,
     name: 'Julia',
     hairColor: 'blonde',
-    hairLength: 'long',
-    glasses: true,
+    hairLength: 'short',
     gender: 'female',
-    earrings: false,
-    moustache: false,
-    beard: false,
+    accesories: 'glasses',
     img: './assets/quien-soy/people/julia.png'
   },
   {
@@ -199,23 +151,17 @@ export const people = [
     name: 'Lucas',
     hairColor: 'red',
     hairLength: 'long',
-    glasses: true,
     gender: 'male',
-    earrings: false,
-    moustache: false,
-    beard: false,
+    accesories: 'glasses',
     img: './assets/quien-soy/people/lucas.png'
   },
   {
     id: 18,
     name: 'Lucía',
     hairColor: 'brown',
-    hairLength: 'long',
-    glasses: false,
+    hairLength: 'short',
     gender: 'female',
-    earrings: true,
-    moustache: false,
-    beard: false,
+    accesories: 'earrings',
     img: './assets/quien-soy/people/lucia.png'
   },
   {
@@ -223,11 +169,8 @@ export const people = [
     name: 'Luis',
     hairColor: 'black',
     hairLength: 'short',
-    glasses: false,
     gender: 'male',
-    earrings: false,
-    moustache: false,
-    beard: true,
+    accesories: 'beard',
     img: './assets/quien-soy/people/luis.png'
   },
   {
@@ -235,23 +178,17 @@ export const people = [
     name: 'Mariano',
     hairColor: 'red',
     hairLength: 'short',
-    glasses: false,
     gender: 'male',
-    earrings: false,
-    moustache: false,
-    beard: false,
+    accesories: 'none',
     img: './assets/quien-soy/people/mariano.png'
   },
   {
     id: 21,
     name: 'Marina',
     hairColor: 'brown',
-    hairLength: 'long',
-    glasses: true,
+    hairLength: 'short',
     gender: 'female',
-    earrings: false,
-    moustache: false,
-    beard: false,
+    accesories: 'glasses',
     img: './assets/quien-soy/people/marina.png'
   },
   {
@@ -259,11 +196,8 @@ export const people = [
     name: 'Miguel',
     hairColor: 'blonde',
     hairLength: 'long',
-    glasses: false,
     gender: 'male',
-    earrings: false,
-    moustache: false,
-    beard: true,
+    accesories: 'beard',
     img: './assets/quien-soy/people/miguel.png'
   },
   {
@@ -271,23 +205,17 @@ export const people = [
     name: 'Pablo',
     hairColor: 'black',
     hairLength: 'short',
-    glasses: true,
     gender: 'male',
-    earrings: false,
-    moustache: false,
-    beard: false,
+    accesories: 'glasses',
     img: './assets/quien-soy/people/pablo.png'
   },
   {
     id: 24,
     name: 'Rocío',
     hairColor: 'black',
-    hairLength: 'long',
-    glasses: false,
+    hairLength: 'short',
     gender: 'female',
-    earrings: false,
-    moustache: false,
-    beard: false,
+    accesories: 'none',
     img: './assets/quien-soy/people/rocio.png'
   }
 ];

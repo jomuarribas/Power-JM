@@ -1,4 +1,7 @@
-import { quienSoyLaunch } from '../quien-soy/quien-soy-game/quien-soy-game';
+import { headerBoard } from '../../main';
+import { footer } from '../footer/footer';
+import { navMenu } from '../nav/nav';
+import { welcomePage } from '../welcome-page/welcome-page';
 import './welcome-modal.css'
 
 export const welcomeModal = () => {
@@ -13,6 +16,7 @@ export const welcomeModal = () => {
   const wlcmForm = document.createElement('form');
   const wlcmFormText = document.createElement('p');
   const wlcmInput = document.createElement('input');
+  wlcmInput.classList.add('wlcmInput');
   const wlcmformButton = document.createElement('button');
 
   wlcmLogo.textContent = "Power JM"
@@ -38,7 +42,16 @@ export const welcomeModal = () => {
 }
 
 const getItName = (e) => {
-  e.preventDefault();
-  localStorage.setItem('Nombre', e.target.form[0].value)
-  quienSoyLaunch()
+  if (e.target.form[0].value.length > 0) {
+    e.preventDefault();
+    localStorage.setItem('Nombre', e.target.form[0].value)
+    navMenu();
+    headerBoard();
+    welcomePage();
+    footer();
+  } else {
+    e.preventDefault();
+    const wlcmInput = document.querySelector('.wlcmInput');
+    wlcmInput.placeholder = "Introduce tu nombre"
+  }
 }
