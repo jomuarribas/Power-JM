@@ -41,7 +41,7 @@ export const welcomePage = () => {
   <p>¡Cuidado con el monstruo que tiene muy mala leche!</p>
   <br>
   <p>¿Has jugado alguna vez al "Piedra, Papel o Tijera"? Segurísimo que si, pero... ¿has jugado contra
-  un cíclope con un "día malo"? Seguro que eso ya no es tan común...</p>
+  un cíclope con un "mal día"? Seguro que eso ya no es tan común...</p>
   <br>
   <p>Si lo consigues domar ¡Avísanos!</p>
   `;
