@@ -1,11 +1,12 @@
 import { main, userName } from "../../../main";
 import { clearPrintPeople, people, printPeople } from "../print-people/print-people";
-import { printQuestions, questions } from "../questions/questions";
+import { printQuestions, printQuestions2, questions } from "../questions/questions";
 import { youWinModal } from "../you-win-modal/you-win-modal";
 import './quien-soy-game.css'
 
 export let peopleFilter = people
 export let questionsFilter = questions
+export let questionsFilter2 = []
 
 export let puntuacion = 0;
 
@@ -31,6 +32,7 @@ random()
 export const quienSoyLaunch = () => {
   main.innerHTML = ''
   puntuacion = 0;
+  questionsFilter2 = []
 
   random();
 
@@ -153,7 +155,10 @@ export const gameOver = (e) => {
 // --- LOGICA EN LAS PREGUNTAS ---
 export const quienSoyQuestions = (e) => {
   const questionDiv = document.querySelector('.questionsDiv');
-  quienSoyHead.removeChild(questionDiv)
+  quienSoyHead.removeChild(questionDiv);
+
+  const questionDiv2 = document.querySelector('.questionsDiv2');
+  if (questionDiv2) { quienSoyHead.removeChild(questionDiv2) };
 
   const quienSoyGame = document.querySelector('.quienSoyGame');
   quienSoyGame.removeChild(quienSoyCards);
@@ -163,7 +168,9 @@ export const quienSoyQuestions = (e) => {
     printPeople()
     sumScore(questions[q].success)
     questionsFilter = questionsFilter.filter(q => q.category !== "Gender")
+    questionsFilter2.push({ question: e.target.textContent })
     printQuestions()
+    printQuestions2()
     return
   }
   const failGender = (item, q) => {
@@ -171,7 +178,9 @@ export const quienSoyQuestions = (e) => {
     printPeople()
     restScore(questions[q].failure)
     questionsFilter = questionsFilter.filter(q => q.category !== "Gender")
+    questionsFilter2.push({ question: e.target.textContent })
     printQuestions()
+    printQuestions2()
     return
   }
 
@@ -180,7 +189,9 @@ export const quienSoyQuestions = (e) => {
     printPeople()
     sumScore(questions[q].success)
     questionsFilter = questionsFilter.filter(q => q.category !== "HairColor")
-    printQuestions(questionsFilter)
+    questionsFilter2.push({ question: e.target.textContent })
+    printQuestions()
+    printQuestions2()
     return
   }
   const failHairColor = (item, q, id) => {
@@ -188,7 +199,9 @@ export const quienSoyQuestions = (e) => {
     printPeople()
     restScore(questions[q].failure)
     questionsFilter = questionsFilter.filter(q => q.id !== id)
-    printQuestions(questionsFilter)
+    questionsFilter2.push({ question: e.target.textContent })
+    printQuestions()
+    printQuestions2()
     return
   }
 
@@ -197,7 +210,9 @@ export const quienSoyQuestions = (e) => {
     printPeople()
     sumScore(questions[q].success)
     questionsFilter = questionsFilter.filter(q => q.category !== "HairLong")
-    printQuestions(questionsFilter)
+    questionsFilter2.push({ question: e.target.textContent })
+    printQuestions()
+    printQuestions2()
     return
   }
   const failHairLength = (item, q) => {
@@ -205,7 +220,9 @@ export const quienSoyQuestions = (e) => {
     printPeople()
     restScore(questions[q].failure)
     questionsFilter = questionsFilter.filter(q => q.category !== "HairLong")
-    printQuestions(questionsFilter)
+    questionsFilter2.push({ question: e.target.textContent })
+    printQuestions()
+    printQuestions2()
     return
   }
 
@@ -214,7 +231,9 @@ export const quienSoyQuestions = (e) => {
     printPeople()
     sumScore(questions[q].success)
     questionsFilter = questionsFilter.filter(q => q.category !== "Accesories")
-    printQuestions(questionsFilter)
+    questionsFilter2.push({ question: e.target.textContent })
+    printQuestions()
+    printQuestions2()
     return
   }
   const failAccesories = (item, q, accesorie) => {
@@ -222,7 +241,9 @@ export const quienSoyQuestions = (e) => {
     printPeople()
     restScore(questions[q].failure)
     questionsFilter = questionsFilter.filter(q => q.id !== accesorie)
-    printQuestions(questionsFilter)
+    questionsFilter2.push({ question: e.target.textContent })
+    printQuestions()
+    printQuestions2()
     return
   }
 

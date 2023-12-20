@@ -1,16 +1,18 @@
 #footer {
-  margin-top: 15px;
+  position: relative;
+  margin-top: 20px;
+  height: 30px;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 20px;
+  background: rgb(255,255,255);
+  background: linear-gradient(71deg, rgba(255,255,255,0) 0%, var(--pjm-secundary-button-color) 50%, rgba(255,255,255,0) 100%);
 }
 
 #footer > div {
   display: flex;
-  position: fixed;
-  bottom: 0;
-  background-color: var(--pjm-secundary-button-color);
-  height: 30px;
+  height: 100%;
   color: black;
-  width: 100%;
-  margin: auto;
   font-size: 15px;
   align-items: center;
   justify-content: center;

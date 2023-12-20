@@ -1,8 +1,9 @@
 import { printCards } from "../print-cards/print-cards";
 import { main, } from "../../../main";
 import "./memory-dev-game.css";
+import { finalModal } from "../final-modal/final-modal";
 
-let scoreMemory = 0;
+export let scoreMemory = 0;
 
 export const memoryDevGameLaunch = () => {
   main.innerHTML = ''
@@ -76,6 +77,8 @@ export const memoryDevPlay = (e) => {
       }
       scoreMemory = scoreMemory + 10;
       scoreMemoryH3.textContent = `Tu puntuación es de: ${scoreMemory}`
+      const final = document.getElementsByClassName("memoryCard open")
+      if (final.length == 16) { finalModal() }
     } else {
       scoreMemory = scoreMemory - 1;
       scoreMemoryH3.textContent = `Tu puntuación es de: ${scoreMemory}`

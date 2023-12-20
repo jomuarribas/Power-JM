@@ -1,4 +1,4 @@
-import { questionsFilter, quienSoyQuestions } from "../quien-soy-game/quien-soy-game";
+import { questionsFilter, questionsFilter2, quienSoyQuestions } from "../quien-soy-game/quien-soy-game";
 
 export const questions = [
   {
@@ -87,12 +87,6 @@ export const questions = [
   }
 ]
 
-export const clearPrintQuestions = () => {
-  const questionDiv = document.querySelector('.questionsDiv');
-  if (questionDiv) {
-    quienSoyHead.removeChild(questionDiv)
-  }
-};
 export const printQuestions = () => {
 
   const questionDiv = document.createElement("div");
@@ -105,5 +99,20 @@ export const printQuestions = () => {
     questionDiv.appendChild(questionP);
 
     questionP.addEventListener("click", quienSoyQuestions)
+
+
+  }
+}
+
+export const printQuestions2 = () => {
+
+  const questionDiv2 = document.createElement("div");
+  questionDiv2.classList.add("questionsDiv2");
+  quienSoyHead.appendChild(questionDiv2);
+
+  for (const question of questionsFilter2) {
+    const questionP = document.createElement("p");
+    questionP.textContent = question.question
+    questionDiv2.appendChild(questionP);
   }
 }

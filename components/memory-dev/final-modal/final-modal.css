@@ -1,0 +1,49 @@
+#finalDiv {
+  display: flex;
+  flex-direction: column;
+  position:absolute;
+  top: -30vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 5;
+  background-color: var(--pjm-primary-color-memoryDev);
+  height: 350px;
+  max-width: 280px;
+  padding: 25px;
+  border-radius: var(--pjm-border-radius-big);
+  gap: 15px;
+  box-shadow: 5px 5px 20px;
+  align-items: center;
+  justify-content: center;
+}
+
+#finalDiv p {
+  color: var(--pjm-primary-color);
+  font-family: 'Lobster', sans-serif;
+  font-size: 19px;
+}
+
+#finalDiv h2 {
+  color: var(--pjm-primary-color);
+  font-family: 'Lobster', sans-serif;
+  font-size: 35px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#finalDiv button {
+  width: 200px;
+  height: 30px;
+  background-color: var(--pjm-secundary-color-memoryDev);
+  color: var(--pjm-secundary-color);
+  border-radius: var(--pjm-border-radius-big);
+  border: 0;
+  cursor: pointer;
+}
+
+#finalDiv > button:hover {
+  background-color: var(--pjm-secundary-button-color);
+  color: var(--pjm-primary-color)
+}
