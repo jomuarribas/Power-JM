@@ -1,12 +1,13 @@
 #footer {
+  display: flex;
   position: relative;
+  align-items: center;
+  justify-content: center;
   margin-top: 20px;
   height: 30px;
   max-width: 1200px;
   margin: auto;
   margin-top: 20px;
-  background: rgb(255,255,255);
-  background: linear-gradient(71deg, rgba(255,255,255,0) 0%, var(--pjm-secundary-button-color) 50%, rgba(255,255,255,0) 100%);
 }
 
 #footer > div {
@@ -14,6 +15,10 @@
   height: 100%;
   color: black;
   font-size: 15px;
+  align-items: center;
+  width: 100%;
+  background: rgb(255,255,255);
+  background: linear-gradient(71deg, rgba(255,255,255,0) 0%, var(--pjm-secundary-button-color) 50%, rgba(255,255,255,0) 100%);
   align-items: center;
   justify-content: center;
 }

@@ -156,6 +156,10 @@
     font-size: 23px;
   }
 
+  .questionsDiv2 > p {
+    font-size: 20px;
+  }
+
   .misteryDiv {
     width: 130px;
     height: 200px;

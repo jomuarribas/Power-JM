@@ -12,7 +12,7 @@ export const finalModal = () => {
   const youWinP = document.createElement('p');
   const youWinButton = document.createElement('button');
 
-  youWinH2.textContent = `¡Enhorabuena ${userName}! ¿Otra partida?`
+  youWinH2.textContent = `¡Enhorabuena ${localStorage.getItem('Nombre')}! ¿Otra partida?`
   youWinP.innerHTML = `Tu puntuación ha sido de: ${scoreMemory}`
   youWinButton.textContent = "Jugar de nuevo"
 

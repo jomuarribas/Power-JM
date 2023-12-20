@@ -78,7 +78,7 @@ export const memoryDevPlay = (e) => {
       scoreMemory = scoreMemory + 10;
       scoreMemoryH3.textContent = `Tu puntuación es de: ${scoreMemory}`
       const final = document.getElementsByClassName("memoryCard open")
-      if (final.length == 16) { finalModal() }
+      if (final.length == 16) { finalModal(); document.body.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
     } else {
       scoreMemory = scoreMemory - 1;
       scoreMemoryH3.textContent = `Tu puntuación es de: ${scoreMemory}`
